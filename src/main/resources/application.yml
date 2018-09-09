@@ -1,0 +1,18 @@
+#服务器启动端口
+server:
+  port: 8080
+
+teacher:
+  lastName: wdx_${random.int}
+  age: 18
+  birthday: 2018/11/02
+  maps: {k1: 123, k2: 456}
+  list:
+    - test
+    - hello
+  student:
+    name: ${teacher.lastName}
+    age: 12
+
+
+
