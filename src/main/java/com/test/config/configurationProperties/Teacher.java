@@ -10,9 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 将属性文件中的值映射到这个组件中
- * ConfigurationProperties默认从全局配置文件application.properties工application.yml中获取
+ * 将全局配置文（application.yml或application.properties）的值映射到这个组件中，类似于 @Value
+ * @ConfigurationProperties:告诉springboot将本类中的所有属性和配置文件中相关的配置进行绑定
  * prefix = "teacher" 将配置文件中的哪个属性进行映射
+ *
+ * @ConfigurationProperties和@Value区别：
+ * 1.@ConfigurationProperties支持批量，而@Value只能一个一个指定
+ * 2.@ConfigurationProperties支持jsr303数据校验，而@Value不支持
+ * 3.对于复杂类型封装（例如map）@ConfigurationProperties支持，而@Value不支持
  */
 @Component
 @ConfigurationProperties(prefix = "teacher")

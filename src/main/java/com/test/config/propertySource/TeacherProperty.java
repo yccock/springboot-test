@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 将属性文件中的值映射到这个组件中
- * ConfigurationProperties默认从全局配置文件application.properties工application.yml中获取
- * PropertySource:从指定的配置文件中读取
+ * 将属性配置文件（teacher.properties）中的值映射到这个组件中
+ * ConfigurationProperties默认从全局配置文件application.properties或application.yml中获取，当指定
+ * 了PropertySource后，将从指定的配置文件中读取
  * prefix = "teacher" 将配置文件中的哪个属性进行映射
  */
 @Component

@@ -1,5 +1,6 @@
 package com.test;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
@@ -10,9 +11,11 @@ import org.springframework.context.annotation.ImportResource;
  */
 @SpringBootApplication
 @ImportResource(value = {"classpath:beans.xml"})
-public class SpringbootTestApplication {
+// 扫描mapper
+@MapperScan(value = "com.test.web.mapper")
+public class SpringbootStarter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootTestApplication.class, args);
+		SpringApplication.run(SpringbootStarter.class, args);
 	}
 }

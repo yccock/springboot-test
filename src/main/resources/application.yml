@@ -1,7 +1,36 @@
-#服务器启动端口
-server:
-  port: 8080
+#开启springboot的debug模式，打开后可以查看哪些配置类开启了
+debug: true
 
+#启用application-dev.yml中的配置文件
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: utf-8
+  devtools:
+    restart:
+      enabled: true
+  thymeleaf:
+    cache: false
+
+
+#设置日志级别
+logging:
+  level:
+    root: info
+    org.springframework.web: ERROR
+  file: /export/log/springboot-test.log
+
+#mybatis配置
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    log-impl:
+
+
+#设置bean需要的参数
 teacher:
   lastName: wdx_${random.int}
   age: 18
@@ -13,6 +42,10 @@ teacher:
   student:
     name: ${teacher.lastName}
     age: 12
+
+
+
+
 
 
 
